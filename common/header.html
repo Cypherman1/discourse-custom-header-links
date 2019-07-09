@@ -4,16 +4,19 @@
         $(document).on('mouseenter', '#Usecase', function() {
             $('#iddropUsecase').css("display","block");
             $('#Usecase').addClass('hoverColor');
+            $('usecase-icon').addClass('hoverColor');
             $('.usecase-ad').addClass('arrow-down');
         });
         $(document).on('mouseleave', '#iddropUsecase', function() {
             $('#iddropUsecase').css("display","none");
             $('#Usecase').removeClass('hoverColor');
+            $('usecase-icon').removeClass('hoverColor');
              $('.usecase-ad').removeClass('arrow-down');
         });
         $(document).on('mouseenter', '.iconUsecase', function() {
             $('.iddropUsecase').css("display","block");
             $('#Usecase').addClass('hoverColor');
+            $('usecase-icon').addClass('hoverColor');
             $('.usecase-ad').addClass('arrow-down');
         });
   });
