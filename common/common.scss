@@ -54,22 +54,7 @@
   color: $tertiary !important;
 }
 
-.custom-header-links .headerLink a:before {
-  background-image: url($btn_arrow);
-  background-repeat: no-repeat;
-  height: 20px;
-  width: 16px;
-  content: " ";
-  position: absolute;
-  left: -16px;
-  top: -6px;
-  height: 20px;
-}
-
 .custom-header-links .headerLink .iconUsecase {
-  background-image: url($btn_arrow);
-  background-repeat: no-repeat;
-  background-size: cover;
   display: inline-block;
   height: 6px;
   width: 10px;
