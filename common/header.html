@@ -1,4 +1,24 @@
 <script type="text/discourse-plugin" version="0.8.20">
+
+  $(document).ready(function() {
+        $(document).on('mouseenter', '#Usecase', function() {
+            $('#iddropUsecase').css("display","block");
+            $('#Usecase').addClass('hoverColor');
+            $('.usecase-ad').addClass('arrow-down');
+        });
+        $(document).on('mouseleave', '#iddropUsecase', function() {
+            $('#iddropUsecase').css("display","none");
+            $('#Usecase').removeClass('hoverColor');
+             $('.usecase-ad').removeClass('arrow-down');
+        });
+        $(document).on('mouseenter', '.iconUsecase', function() {
+            $('.iddropUsecase').css("display","block");
+            $('#Usecase').addClass('hoverColor');
+            $('.usecase-ad').addClass('arrow-down');
+        });
+  });
+
+
   const customHeaderLinks = settings.Custom_header_links;
 
   if (!customHeaderLinks.length) return;
@@ -19,15 +39,20 @@
     if (!linkTarget) {
       headerLinks.push(
         h(
-          `li.headerLink${deviceClass}${keepOnScrollClass}${linkClass}`,
-          h(
-            "a",
-            {
-              title: linkTitle,
-              href: linkHref
-            },
-            linkText
-          )
+          `li.headerLink${deviceClass}${keepOnScrollClass}${linkClass}${linkClass}-ad`,
+          [
+            h(
+                "a",
+                {
+                  title: linkTitle,
+                  id: linkTitle
+                },
+                linkText,
+            ),
+            h(
+                `div.icon${linkText}`
+            )
+          ],
         )
       );
     } else {

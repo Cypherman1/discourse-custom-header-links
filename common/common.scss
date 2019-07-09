@@ -15,7 +15,7 @@
   .headerLink {
     list-style: none;
     a {
-      padding: 6px 10px;
+      padding: 6px 4px 6px 25px;
       color: $header_primary;
       font-size: $font-up-1;
     }
@@ -26,3 +26,101 @@
 .mobile-view .vdo {
   display: none !important;
 }
+
+// .d-header .header-buttons {
+//     margin: 50px 500px 30px 0px;
+// }
+
+.d-header .header-buttons .custom-header-links {
+  margin: 50px 230px 30px 0px;
+}
+
+.d-header #site-logo {
+  max-height: 45px !important;
+}
+
+.dropUsecase {
+  display: none;
+  position: fixed;
+  top: 96px;
+  background-color: #fff;
+  width: 99vw;
+  box-shadow: 2.5px 4.3px 5px rgba(85, 85, 85, 0.15);
+  z-index: 1000;
+  //   width:100%;left:0;top:85px;background-color:#fff;;
+}
+
+.hoverColor {
+  color: $tertiary !important;
+}
+
+.custom-header-links .headerLink a:before {
+  background-image: url($btn_arrow);
+  background-repeat: no-repeat;
+  height: 20px;
+  width: 16px;
+  content: " ";
+  position: absolute;
+  left: -16px;
+  top: -6px;
+  height: 20px;
+}
+
+.custom-header-links .headerLink .iconUsecase {
+  background-image: url($btn_arrow);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  height: 6px;
+  width: 10px;
+  margin-bottom: 1px;
+}
+
+.arrow-down:after {
+  content: "";
+  position: relative;
+  top: 8px;
+  margin-left: -50px;
+  width: 0;
+  height: 0;
+  border-bottom: solid 15px #ffffff;
+  border-left: solid 15px transparent;
+  border-right: solid 15px transparent;
+}
+
+.gnb_cont_wrap {
+  position: relative;
+  width: 1200px;
+  left: 50%;
+  margin-left: -565px;
+  padding: 70px 0 50px;
+}
+.gnb_left_cont {
+  float: left;
+  width: 700px;
+}
+.gnb_left_cont .gnb_menu_list:nth-child(2n) a {
+  margin-right: 0;
+}
+.gnb_menu_explain_cont {
+  padding-top: 5px;
+  margin-bottom: 10px;
+  font-family: SamsungOneLatinWeb-400;
+  font-size: 16px;
+  color: #656565;
+}
+.gnb_menu_list {
+  float: left;
+  margin-top: 40px;
+}
+// .gnb_menu_list a{position:relative;width:285px;margin:0 80px 0 0;font-family:SamsungOneLatinWeb-400, NanumSquareWeb-400;font-size:16px;color:#656565;}
+// .gnb_menu_list a{width:310px;margin:0 40px 0 0;}
+// .gnb_menu_list a:hover{color:#3922e5;}
+// .gnb_menu_list a:hover .gnb_menu_name{color:#3922e5;}
+// .gnb_menu_list a:hover .gnb_menu_link{color:#3922e5;text-decoration:underline;}
+// .gnb_menu_list.menu_list_disable a:before{content:"";position:absolute;width:360px;height:100px;background-color:#fff;opacity:0.5;}
+// /*.gnb_wrap .gnb_menu_list.menu_list_disable a:after{content:"open in 2019";position:absolute;width:105px;height:28px;top:3px;left:140px;line-height:28px;border-radius:14px;background-color:#858585;text-align:center;font-family:SamsungOneLatinWeb-500, NanumSquareWeb-500;font-size:14px;color:#fff;}*/
+// .gnb_menu_list.menu_list_disable a:hover{color:#666;cursor:auto;}
+// .gnb_menu_list.menu_list_disable a:hover .gnb_menu_name{color:#111;}
+// .gnb_menu_list.menu_list_disable:last-child a:after{left:100px;}
+// .gnb_wrap .gnb_menu_list .gnb_menu_icon:before{content:"";position:absolute;top:2px;left:0}
