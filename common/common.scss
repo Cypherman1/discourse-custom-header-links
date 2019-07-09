@@ -54,7 +54,13 @@
   color: $tertiary !important;
 }
 
-.custom-header-links .headerLink .iconUsecase {
+.custom-header-links .headerLink .about-icon {
+  display: none;
+  height: 6px;
+  width: 10px;
+  margin-bottom: 1px;
+}
+.custom-header-links .headerLink .usecase-icon {
   display: inline-block;
   height: 6px;
   width: 10px;
