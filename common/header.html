@@ -1,6 +1,7 @@
 <script type="text/discourse-plugin" version="0.8.20">
 
   $(document).ready(function() {
+        // Usescase
         $(document).on('mouseenter', '#Usecase', function() {
             $('#iddropUsecase').css("display","block");
             $('#Usecase').addClass('hoverColor');
@@ -19,6 +20,29 @@
             $('.usecase-icon').addClass('hoverColor');
             $('.usecase-ad').addClass('arrow-down');
         });
+
+        // Documentation
+        $(document).on('mouseenter', '#Documentation', function() {
+            $('#iddropDocumentation').css("display","block");
+            $('#Documentation').addClass('hoverColor');
+            $('.documentation-icon').addClass('hoverColor');
+            $('.documentation-ad').addClass('arrow-down');
+        });
+        $(document).on('mouseleave', '#iddropDocumentation', function() {
+            $('#iddropDocumentation').css("display","none");
+            $('#Documentation').removeClass('hoverColor');
+            $('.documentation-icon').removeClass('hoverColor');
+             $('.documentation-ad').removeClass('arrow-down');
+        });
+        $(document).on('mouseenter', '.iconDocumentation', function() {
+            $('.iddropDocumentation').css("display","block");
+            $('#Documentation').addClass('hoverColor');
+            $('.documentation-icon').addClass('hoverColor');
+            $('.documentation-ad').addClass('arrow-down');
+        });
+
+
+
   });
 
   const { iconNode } = require("discourse-common/lib/icon-library");
