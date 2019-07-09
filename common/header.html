@@ -7,18 +7,33 @@
             $('#Usecase').addClass('hoverColor');
             $('.usecase-icon').addClass('hoverColor');
             $('.usecase-ad').addClass('arrow-down');
+
+            $('#iddropDocumentation').css("display","none");
+            $('#Documentation').removeClass('hoverColor');
+            $('.documentation-icon').removeClass('hoverColor');
+            $('.documentation-ad').removeClass('arrow-down');
+
         });
+
+
         $(document).on('mouseleave', '#iddropUsecase', function() {
             $('#iddropUsecase').css("display","none");
             $('#Usecase').removeClass('hoverColor');
             $('.usecase-icon').removeClass('hoverColor');
-             $('.usecase-ad').removeClass('arrow-down');
+            $('.usecase-ad').removeClass('arrow-down');
         });
-        $(document).on('mouseenter', '.iconUsecase', function() {
+
+        $(document).on('mouseenter', '.usecase-icon', function() {
             $('.iddropUsecase').css("display","block");
             $('#Usecase').addClass('hoverColor');
             $('.usecase-icon').addClass('hoverColor');
             $('.usecase-ad').addClass('arrow-down');
+
+            $('#iddropDocumentation').css("display","none");
+            $('#Documentation').removeClass('hoverColor');
+            $('.documentation-icon').removeClass('hoverColor');
+            $('.documentation-ad').removeClass('arrow-down');
+
         });
 
         // Documentation
@@ -27,18 +42,29 @@
             $('#Documentation').addClass('hoverColor');
             $('.documentation-icon').addClass('hoverColor');
             $('.documentation-ad').addClass('arrow-down');
+
+            $('#iddropUsecase').css("display","none");
+            $('#Usecase').removeClass('hoverColor');
+            $('.usecase-icon').removeClass('hoverColor');
+            $('.usecase-ad').removeClass('arrow-down');
         });
         $(document).on('mouseleave', '#iddropDocumentation', function() {
             $('#iddropDocumentation').css("display","none");
             $('#Documentation').removeClass('hoverColor');
             $('.documentation-icon').removeClass('hoverColor');
-             $('.documentation-ad').removeClass('arrow-down');
+            $('.documentation-ad').removeClass('arrow-down');
         });
-        $(document).on('mouseenter', '.iconDocumentation', function() {
+
+        $(document).on('mouseenter', '.documentation-icon', function() {
             $('.iddropDocumentation').css("display","block");
             $('#Documentation').addClass('hoverColor');
             $('.documentation-icon').addClass('hoverColor');
             $('.documentation-ad').addClass('arrow-down');
+
+            $('#iddropUsecase').css("display","none");
+            $('#Usecase').removeClass('hoverColor');
+            $('.usecase-icon').removeClass('hoverColor');
+            $('.usecase-ad').removeClass('arrow-down');
         });
 
 
