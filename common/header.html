@@ -18,8 +18,12 @@
         });
   });
 
-
+  const { iconNode } = require("discourse-common/lib/icon-library");
   const customHeaderLinks = settings.Custom_header_links;
+
+  let icon = iconNode('user-times');
+
+
 
   if (!customHeaderLinks.length) return;
 
@@ -51,7 +55,8 @@
             ),
             h(
                 `div.icon${linkText}`
-            )
+            ),
+            icon
           ],
         )
       );
