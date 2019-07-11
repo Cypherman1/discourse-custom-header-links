@@ -1,6 +1,6 @@
 Custom_header_links:
   type: list
-  default: "About, About, http://www.brightics.ai/about, vdo, self, keep|Download, Download , http://www.brightics.ai/downloads, vdo, self, keep|Documentation, Documentation, http://www.brightics.ai/docs/ai/v3.6/user_guide/01_introduction, vdm, self, keep|Usecase, Usecase, http://www.brightics.ai/usecases, vdm, self, keep|Help, Help, http://www.brightics.ai/quick-start, vdm, self, keep"
+  default: "About, About, http://www.brightics.ai/about, vdo, self, keep|Download, Download , http://www.brightics.ai/downloads, vdo, self, keep|Documentation, Documentation, # , vdm, self, keep|Usecase, Usecase, #, vdm, self, keep|Help, Help, # , vdm, self, keep"
   description:
     en: "Comma delimited in this order: link text, link title, URL, view, target, hide on scroll<br><b>Link text:</b> The text for the link<br><b>Link title:</b> the text that shows when the link is hovered<br><b>URL:</b> The path for the link (can be relative)<br><b>View:</b> vdm = desktop and mobile, vdo = desktop only, vmo = mobile only<br><b>Target:</b> blank = opens in a new tab, self = opens in the same tab<br><b>Hide on scroll:</b> remove = hides the link when the title is expanded on topic pages keep = keeps the link visible even when the title is visible on topic pages"
 
