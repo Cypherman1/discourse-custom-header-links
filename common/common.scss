@@ -73,19 +73,6 @@ body {
   direction: ltr;
   -webkit-text-size-adjust: none;
 }
-body,
-th,
-td,
-input,
-select,
-textarea,
-button {
-  font-size: 12px;
-  line-height: 1.5;
-  font-family: AppleSDGothicNeo-Regular, "Malgun Gothic", "맑은 고딕", dotum,
-    "돋움", sans-serif;
-  color: #222;
-}
 .os_mac body,
 .os_mac th,
 .os_mac td,
@@ -231,30 +218,6 @@ legend,
   line-height: 16px;
   color: #fff;
 }
-.header-buttons ul button:before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 6px;
-  right: 0;
-  top: 6px;
-  background: url("../assets/images/gnb_ico_fold.png") no-repeat;
-}
-.header-buttons ul button:hover {
-  font-family: SamsungOneLatinWeb-500, NanumSquareWeb-500;
-  color: #899bff;
-  cursor: auto;
-}
-.header-buttons ul button:hover:before {
-  background: url("../assets/images/gnb_ico_fold_on.png") no-repeat;
-}
-.header-buttons ul .on {
-  font-family: SamsungOneLatinWeb-500, NanumSquareWeb-500;
-  color: #899bff;
-}
-.header-buttons ul .on:before {
-  background: url("../assets/images/gnb_ico_fold_on.png") no-repeat;
-}
 
 .dropHelp {
   display: none;
@@ -342,20 +305,6 @@ legend,
   border-bottom: solid 15px #ffffff;
   border-left: solid 15px transparent;
   border-right: solid 15px transparent;
-}
-
-body,
-button,
-input,
-select,
-td,
-textarea,
-th {
-  font-size: 12px;
-  line-height: 1.5;
-  font-family: AppleSDGothicNeo-Regular, Malgun Gothic, "\B9D1\C740 \ACE0\B515",
-    dotum, "\B3CB\C6C0", sans-serif;
-  color: #222;
 }
 
 .clear_both {
