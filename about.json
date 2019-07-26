@@ -42,9 +42,24 @@
     "ico_gnb07": "assets/ico_gnb07.png",
     "ico_gnb08": "assets/ico_gnb08.png",
     "arrow_more_gray": "assets/arrow_more_gray.png",
-    "ico_github": "assets/ico_github.png"
+    "ico_github": "assets/ico_github.png",
+    "NanumSquareBeot": "assets/NanumSquareB.eot",
+    "NanumSquareBotf": "assets/NanumSquareB.otf",
+    "NanumSquareBttf": "assets/NanumSquareB.ttf",
+    "NanumSquareBwoff": "assets/NanumSquareB.woff",
+    "NanumSquareEBeot": "assets/NanumSquareEB.eot",
+    "NanumSquareEBotf": "assets/NanumSquareEB.otf",
+    "NanumSquareEBttf": "assets/NanumSquareEB.ttf",
+    "NanumSquareEBwoff": "assets/NanumSquareEB.woff",
+    "NanumSquareLeot": "assets/NanumSquareL.eot",
+    "NanumSquareLotf": "assets/NanumSquareL.otf",
+    "NanumSquareLttf": "assets/NanumSquareL.ttf",
+    "NanumSquareLwoff": "assets/NanumSquareL.woff",
+    "NanumSquareReot": "assets/NanumSquareR.eot",
+    "NanumSquareRotf": "assets/NanumSquareR.otf",
+    "NanumSquareRttf": "assets/NanumSquareR.ttf",
+    "NanumSquareRwoff": "assets/NanumSquareR.woff"
   },
-  "color_schemes": {
-  },
+  "color_schemes": {},
   "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
 }
