@@ -1,5 +1,4 @@
 <script type="text/discourse-plugin" version="0.8.20">
-
   $(document).ready(function() {
         // Usescase
         $(document).on('mouseenter', '#Usecase', function() {
@@ -130,13 +129,40 @@
             $('.usecase-ad').removeClass('arrow-down');
 
         });
-
-
-
+        
+        $(document).on('click','.btn_language_header', function(event){
+            event.stopPropagation();
+            $('.common_select_cont').toggle();
+            
+        });
+        
+        $(document).click(function(){
+            $('.common_select_cont').hide();
+        });
+        
+        $(document).on('click','.btn_github', function(event){
+            event.preventDefault();
+            event.stopPropagation();
+            window.open('https://github.com/brightics/studio', '_blank')
+            // window.location.href='https://github.com/brightics/studio';
+            
+        });
+        
+        $(document).on('click','.lg_en', function(event){
+            $('#iddropDocumentation .gnb_cont_wrap .gnb_left_cont .gnb_menu_explain h3').text("데이터 과학자이신가요?");
+            $('#iddropDocumentation .gnb_cont_wrap .gnb_left_cont .gnb_menu_explain p').html("Brightics AI로 데이터를 쉽게 분석할 수 있습니다.<br> 아래 메뉴를 확인하시고 데이터 분석을 시작하는 데 도움을 얻으세요.");
+            $('#iddropDocumentation ul .gnb_menu_list .gnb_menu_icon .user_guide_name').html("사용자 가이드");
+            $('#iddropDocumentation ul .gnb_menu_list .gnb_menu_icon .user_guide_cont').html("Brightics AI를 사용하는 법을 배워보세요.");
+        });
+        
   });
-
+    
+  
   const { iconNode } = require("discourse-common/lib/icon-library");
+  const { wantsNewWindow } = require("discourse/lib/intercept-click");
   const customHeaderLinks = settings.Custom_header_links;
+  
+  
 
   let icon = iconNode('user-times');
 
@@ -194,13 +220,188 @@
       );
     }
   });
+  
+  
+  
+  const dropdown = {
+  buildClasses(attrs) {
+    if (attrs.active) {
+      return "active";
+    }
+  },
 
+  click(e) {
+    if (wantsNewWindow(e)) {
+      return;
+    }
+    e.preventDefault();
+    if (!this.attrs.active) {
+      this.sendWidgetAction(this.attrs.action);
+    }
+  }
+};
+
+api.reopenWidget("header-dropdown",
+  jQuery.extend(
+    {
+      html(attrs) {
+        const title = I18n.t(attrs.title);
+
+        const body = [iconNode(attrs.icon)];
+        if (attrs.contents) {
+          body.push(attrs.contents.call(this));
+        }
+
+        return h(
+          "a.icon.btn-flat",
+          {
+            attributes: {
+              href: attrs.href,
+              "data-auto-route": true,
+              title,
+              "aria-label": title,
+              id: attrs.iconId
+            }
+          },
+          body
+        );
+      }
+    },
+    dropdown
+  ));
+
+
+api.reopenWidget("user-dropdown",
+  jQuery.extend(
+    {
+      html(attrs) {
+        return h(
+          "a.icon.brightics-icon",
+          {
+            attributes: {
+              href: attrs.user.get("path"),
+              "data-auto-route": true
+            }
+          },
+          this.attach("header-notifications", attrs)
+        );
+      }
+    },
+    dropdown
+  )
+
+)
+  
+  
+
+  api.reopenWidget("header-icons", {
+    html(attrs) {
+        if (this.siteSettings.login_required && !this.currentUser) {
+          return [];
+        }
+    
+        const hamburger = this.attach("header-dropdown", {
+          title: "hamburger_menu",
+          icon: "bars",
+          iconId: "toggle-hamburger-menu",
+          active: attrs.hamburgerVisible,
+          action: "toggleHamburger",
+          href: "",
+          className:"test",
+          contents() {
+            let { currentUser } = this;
+            if (currentUser && currentUser.reviewable_count) {
+              return h(
+                "div.badge-notification.reviewables",
+                {
+                  attributes: {
+                    title: I18n.t("notifications.reviewable_items")
+                  }
+                },
+                this.currentUser.reviewable_count
+              );
+            }
+          }
+        });
+    
+        const search = this.attach("header-dropdown", {
+          title: "search.title",
+          icon: "search",
+          iconId: "search-button",
+          action: "toggleSearchMenu",
+          active: attrs.searchVisible,
+          href: Discourse.getURL("/search")
+        });
+    
+        const icons = [];
+        if (attrs.user) {
+          icons.push(
+            this.attach("user-dropdown", {
+              active: attrs.userVisible,
+              action: "toggleUserMenu",
+              ringBackdrop: attrs.ringBackdrop,
+              user: attrs.user
+            })
+          );
+        } else {
+          icons.push(
+            this.attach("link", {
+            label: "log_in",
+            className: "login-link",
+            action: "showLogin",
+            
+        })
+        );
+        }
+        
+        icons.push(h("button.btn_github", {
+                title: "Github Repository"
+                
+            }
+        ));
+        
+        icons.push(hamburger);
+        icons.push(search);
+    
+        return icons;
+      }
+  });
+  
   api.decorateWidget("header-buttons:before", helper => {
     return helper.h(
       "ul.custom-header-links", headerLinks
     );
   });
-
+  
+  api.decorateWidget("header-icons:before", helper => {
+    return helper.h(
+      "div.btn_language.btn_language_header.common_select_header", 
+       [
+        helper.h ("div.common_select_title", "Global / English"),
+        helper.h ("div.common_select_cont", {
+            style: "display:none"
+        },
+            helper.h("ul", 
+                [
+                    helper.h("li.li_pr.lg_en", "Global / English"),
+                    helper.h("li.li_pr.lg_kr","Korean / 한국어")
+                ]
+            )
+        )
+       ]
+       );
+  });
+  
+  
+  
+//   api.decorateWidget("header-icons:after", helper => {
+//     return helper.h(
+//       "button.btn_github", {
+//           title: "Github Repository"
+//       }, helper.h("span.blind", "github")
+//       );
+//   });
+  
   api.decorateWidget("home-logo:after", helper => {
     let titleVisible = helper.attrs.minimized;
     if (titleVisible) {

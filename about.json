@@ -40,8 +40,11 @@
     "ico_btnlink": "assets/ico_btnlink.png",
     "ico_gnb06": "assets/ico_gnb06.png",
     "ico_gnb07": "assets/ico_gnb07.png",
-    "ico_gnb08": "assets/ico_gnb08.png"
+    "ico_gnb08": "assets/ico_gnb08.png",
+    "arrow_more_gray": "assets/arrow_more_gray.png",
+    "ico_github": "assets/ico_github.png"
   },
-  "color_schemes": {},
+  "color_schemes": {
+  },
   "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
 }

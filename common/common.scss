@@ -192,8 +192,22 @@ legend,
 // }
 
 .d-header .header-buttons .custom-header-links {
-  margin: 50px 230px 26px 0px;
+  margin: 45px 130px 22px 0px;
 }
+
+@media screen and (max-width: 1230px) {
+    .d-header .header-buttons .custom-header-links {
+        margin: 40px 130px 22px 0px;
+    }
+}
+  
+@media screen and (min-width: 1231px) {
+    .d-header .header-buttons .custom-header-links {
+        margin: 40px 185px 22px 0px;
+    }   
+}
+
+
 
 .d-header #site-logo {
   max-height: 45px !important;
@@ -689,4 +703,90 @@ ul {
   font-family: SamsungOneLatinWeb-500, NanumSquareWeb-500;
   font-size: 14px;
   color: #fff;
+}
+.btn_language_header {
+    font-size: 13px;
+    margin-right:0px;
+    vertical-align: middle;
+    font-family: SamsungOneLatinWeb-400,NanumSquareWeb-400;
+    padding-top: 2px;
+    float: left;
+}
+.common_select_header {
+    width: 125px;
+    box-sizing: border-box;
+    font-family: SamsungOneLatinWeb-400, NanumSquareWeb-400;
+    cursor: pointer;
+    color: #656565;
+}
+.common_select_title {
+    padding: 0px 15px 0px 0px;
+    border-bottom: 1px solid transparent;
+    color: hsla(0,0%,100%,.6);
+    background: url($arrow_more_gray) no-repeat right 5px;
+}
+
+.d-header-icons {
+    height: 80px;
+    display: inline-block;
+    width: 245px;
+    margin-top: 10px;
+}
+
+.common_select_cont_header {
+    position: absolute;
+    width: 114px;
+    padding: 10px 0;
+    margin-top: -1px;
+    border: 1px solid #ccc;
+    border-top: 1px solid #1743d5;
+    background-color: #fff;
+    -webkit-box-shadow: 2.5px 4.3px 5px rgba(85,85,85,.15);
+    box-shadow: 2.5px 4.3px 5px rgba(85,85,85,.15);
+    z-index: 2000;
+
+}
+
+.li_pr {
+    padding-right: 12px!important;
+}
+
+.header-buttons button {
+    display: none;
+}
+
+.login-link {
+    width: 80px;
+    box-sizing: border-box;
+    font-family: SamsungOneLatinWeb-400, NanumSquareWeb-400;
+    color: hsla(0,0%,100%,.6)!important;
+    cursor: pointer;
+    color: #656565;
+}
+
+.login-link:hover{
+    text-decoration: underline;
+}
+
+.d-header-icons li:nth-last-of-type(2) {
+  float: right;
+}
+
+.d-header-icons li:nth-last-of-type(1) {
+  float: right;
+}
+
+.btn_github{position:relative;width:24px;height:24px;margin-left:27px;}
+.btn_github:before{content:"";position:absolute;top:0;height:15px;margin:3px 0 0 -26px;opacity:0.2;border-left:1px solid #fff;}
+.btn_github:after{position:absolute;left:0;top:0;content:"";width:20px;height:20px;display:block;background-image:url($ico_github);background-size:100% 100%;opacity:0.6}
+.btn_github:hover:after{opacity:1}
+.brightics-icon {
+    height: 18px!important;
+    width: 18px!important;
+    
+}
+
+.brightics-icon img {
+    width: 24px!important;
+    height: 24px!important;
 }
