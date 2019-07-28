@@ -253,6 +253,16 @@
               $('.common_select_cont_header').hide();
           });
 
+          $(document).on('click','.btn_language_footer', function(event){
+            event.stopPropagation();
+            $('.common_select_cont_footer').toggle();
+
+        });
+
+        $(document).click(function(){
+            $('.common_select_cont_footer').hide();
+        });
+
           $(document).on('click','.btn_github', function(event){
               event.preventDefault();
               event.stopPropagation();
