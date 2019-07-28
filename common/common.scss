@@ -758,12 +758,11 @@ ul {
   box-sizing: border-box;
   font-family: SamsungOneLatinWeb-400, NanumSquareWeb-400;
   cursor: pointer;
-  color: #656565;
+  color: hsla(0, 0%, 100%, 0.6);
 }
 .common_select_title {
   padding: 0px 15px 0px 0px;
   border-bottom: 1px solid transparent;
-  color: hsla(0, 0%, 100%, 0.6);
   background: url($arrow_more_gray) no-repeat right 5px;
 }
 
